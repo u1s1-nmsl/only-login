@@ -98,6 +98,7 @@ Star.prototype.draw = function(ctx, move) {
 
 function Starry(real){
     this.runtime = false
+    this.real = real
     this.realCtx = real.getContext('2d')
     // 虚拟画布
     this.canvas = document.createElement('canvas')
@@ -201,9 +202,19 @@ Starry.prototype.frame = function(){
 }
 
 Starry.prototype.initAnimation = function(){
+    this.checkSize()
     this.frame()
     this.auxiliary()
     this.runtime && window.requestAnimationFrame(() => this.initAnimation())
+}
+
+Starry.prototype.checkSize = function(){
+    let w = window.innerWidth
+    let h = window.innerHeight + 10
+    if (this.w !== w || this.h !== h){
+        this.w = this.canvas.width = this.real.width = w
+        this.h = this.canvas.height = this.real.height = h
+    }
 }
 
 Starry.prototype.auxiliary = function(){
