@@ -7,10 +7,14 @@
 <script setup>
 import { onMounted } from "vue";
 
+// 弹窗
 let dialog = null
+// 密码真实存储地址
 let value = ''
+// 光标计算位置
 let start = 0
 let end = 0
+// input元素的DOM
 let that = null
 // 用户名和密码校验规则
 const reg = /[^0-9a-zA-Z\s._!@#%$]/g

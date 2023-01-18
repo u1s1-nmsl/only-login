@@ -7,12 +7,13 @@
 
 <script setup>
 import { onMounted } from "vue";
-import { sakura } from '@/common/animate/sakura'
+//import { sakura } from '@/common/animate/sakura'
 import { starry } from '@/common/animate/starry'
 
 onMounted(()=> {
   let canvas = document.getElementById('canvas');
-  Math.random() < 0.5 ? starry(canvas) : sakura(canvas)
+  //Math.random() < 0.5 ? starry(canvas) : sakura(canvas)
+  starry(canvas)
 })
 </script>
 <script>
